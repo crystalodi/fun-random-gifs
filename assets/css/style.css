@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+body {
+	margin:0;
+	padding:0;
+	line-height: 1.5;
+	font-family:Arial, sans-serif;
+	font-size:16px;
+}
+header {
+    width:100%;
+    background-color:pink;
+    height:50px;
+    margin-bottom:1%;
+}
+.row {
+    float:left;
+    width:100%;
+    padding-left:1%;
+	padding-right:1%;
+	margin-bottom:1%;
+}
+.button-container,
+.add-gif-container,
+.gif-container {
+    float:left;
+    margin:0 auto;
+    height:200px;
+    width:100%;
+}
+.gif-button {
+    background-color:grey;
+	color:white;
+	border:none;
+	padding:5px;
+	margin:5px;
+}
