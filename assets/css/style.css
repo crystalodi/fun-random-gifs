@@ -38,3 +38,9 @@ header {
 .gif-button:hover {
     cursor:pointer;
 }
+.image-gif {
+    margin:5px;
+}
+.image-gif:hover {
+    cursor:pointer;
+}
