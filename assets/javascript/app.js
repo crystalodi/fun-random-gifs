@@ -13,7 +13,6 @@ function renderButtons() {
 $(document.body).on("click", ".gif-button", function(){
     var tag = $(this).attr("data-search-term");
     var api_key = "AQ2G208I6ueekgMInH28ImZXlgHXik7a";
-    var rating = "G";
     var queryURL = "https://api.giphy.com/v1/gifs/random" +
     "?api_key=" + api_key + "&tag=" + tag;
     $.ajax({
