@@ -15,13 +15,24 @@ $(document.body).on("click", ".gif-button", function(){
     var api_key = "AQ2G208I6ueekgMInH28ImZXlgHXik7a";
     var rating = "G";
     var queryURL = "https://api.giphy.com/v1/gifs/random" +
-    "?api_key=" + api_key + "&tag=" + tag + "&rating=" + rating;
+    "?api_key=" + api_key + "&tag=" + tag;
     $.ajax({
         url:queryURL,
         method: "GET"
     }).then(function(response){
-        console.log(response)
-    })
+        //get the image url from the JSON object response
+        var imageUrl = response.data.image_original_url;
+
+        //create a new image on the page
+        var gifImage = $("<img>");
+
+        //set the src with the imageUrl variable
+        gifImage.attr("src", imageUrl);
+        gifImage.attr("alt", "gif");
+        gifImage.attr("class", "image-gif");
+        //add the most recent gif message to the top of the images container
+        $("#gif-container").prepend(gifImage);
+    });
 
 });
 renderButtons();
