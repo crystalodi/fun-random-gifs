@@ -26,13 +26,15 @@ header {
 .gif-container {
     float:left;
     margin:0 auto;
-    height:200px;
     width:100%;
 }
 .gif-button {
     background-color:grey;
 	color:white;
 	border:none;
-	padding:5px;
+	padding:10px 8px 10px 8px;
 	margin:5px;
+}
+.gif-button:hover {
+    cursor:pointer;
 }
