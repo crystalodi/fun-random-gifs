@@ -35,8 +35,6 @@ function searchGIPHY(){
         method: "GET"
     }).then(function(response){
         var gifArray = response.data;
-        console.log(response);
-        console.log(gifArray);
         for(var i = 0; i < gifArray.length; i++) {
             console.log(gifArray[i]);
             var imageUrl = gifArray[i]["images"]["fixed_height_still"]["url"];
