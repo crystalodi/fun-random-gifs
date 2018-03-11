@@ -1,4 +1,4 @@
-var topics = ["the most popular girls in school", "rockos modern life", "gossip girl", "sailor moon", "hey arnold"];
+var topics = ["the most popular girls in school", "rockos modern life", "gossip girl", "sailor moon", "hey arnold", "skins"];
 
 function renderButtons() {
     $("#button-container").empty();
