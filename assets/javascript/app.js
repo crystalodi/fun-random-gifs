@@ -10,15 +10,17 @@ function renderButtons() {
         $("#button-container").append(button);
     }
 }
-$(".submit-button").on("click", function(event){
+
+function addSearchTerm(event) {
     event.preventDefault();
     var searchTerm = $("#searchTerm").val().trim();
     if(searchTerm) {
         topics.push(searchTerm);
         renderButtons();
     }
-});
-$(document.body).on("click", ".gif-button", function(){
+}
+
+function searchGIPHY(){
     var tag = $(this).attr("data-search-term");
     var api_key = "AQ2G208I6ueekgMInH28ImZXlgHXik7a";
     var rating = "G"
@@ -33,7 +35,8 @@ $(document.body).on("click", ".gif-button", function(){
         method: "GET"
     }).then(function(response){
         var gifArray = response.data;
-        console.log(gifArray)
+        console.log(response);
+        console.log(gifArray);
         for(var i = 0; i < gifArray.length; i++) {
             console.log(gifArray[i]);
             var imageUrl = gifArray[i]["images"]["fixed_height_still"]["url"];
@@ -53,8 +56,8 @@ $(document.body).on("click", ".gif-button", function(){
             div.append(rating);
         }
     });
-});
-$(document.body).on("click", ".image-gif", function(){
+}
+function stopStartGIF() {
     var state = $(this).attr("data-state");
     if(state === "still"){
         $(this).attr("src", $(this).attr("data-animate"));
@@ -63,5 +66,8 @@ $(document.body).on("click", ".image-gif", function(){
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still")
     }
-})
-renderButtons();
+}
+$(document.body).on("click", ".gif-button", searchGIPHY);
+$(document.body).on("click", ".image-gif", stopStartGIF);
+$(document).ready(renderButtons)
+$(".submit-button").on("click", addSearchTerm);
