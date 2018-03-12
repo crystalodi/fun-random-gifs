@@ -18,6 +18,7 @@ function addSearchTerm(event) {
         topics.push(searchTerm);
         renderButtons();
     }
+    $("#searchTerm").val("");
 }
 
 function searchGIPHY(){
