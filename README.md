@@ -45,6 +45,33 @@ Open the `index.html` file by double clicking on it. The app will open in a web 
 
 ### Folder Structure
 
+After following the instructions in the installation section, the contents of the `/tv-show-gif-generator`will look like this
+
+```
+│   index.html
+│   README.md
+│
+└───assets
+    ├───css
+    │       reset.css
+    │       style.css
+    │
+    ├───images
+    │       add_gif_search_term_1.png
+    │       add_gif_search_term_2.png
+    │       ezgif-4-e75bd4e6bd.gif
+    │       home.png
+    │       retrieve_gifs.jpg
+    │
+    └───javascript
+            app.js
+```
+
+* `index.html` contains the ui for the application. This includes the form used to add buttons used to search for gifs.
+* `assets/css/reset.css` removes any default styling applied by web browsers
+* `assets/css/style.css` Contains styling for add tv show form, tv show search buttons, and gif search results.
+* `assets/javascript/app.js` Each time a tv show search button is clicked, an ajax GET request is sent using the url `https://api.giphy.com/v1/gifs/search` to retrieve 10 gifs that match the tv show text on the button. The code also allows users to add more search terms and display them as buttons.
+
 ## How to Use
 
 ### Adding a gif search term
